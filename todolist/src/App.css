@@ -12,7 +12,7 @@ body {
     rgba(48, 16, 255, 1) 0%,
     rgba(100, 115, 255, 1) 100%
   ); */
-  animation: changeColor 60s infinite 3s;
+  animation: changeColor 60s infinite;
 }
 .banner-container{
   display: flex;
