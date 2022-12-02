@@ -7,11 +7,36 @@
 }
 
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(48, 16, 255, 1) 0%,
     rgba(100, 115, 255, 1) 100%
-  );
+  ); */
+  animation: changeColor 60s infinite 3s;
+}
+.banner-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  border-radius: 10px 10px 0 0;
+  background-color: #161a2b;
+  border: 2px solid white;
+  text-align: center;
+  margin: 8vh auto 0 auto;
+  animation: apearIn 1s ease-out;
+  text-shadow: 0 0 5px rgb(29, 0, 219), 0 0 5px rgb(78, 47, 255);
+}
+.banner-container:hover{
+  background-color: #ff9d00;
+  transition: background 0.5s;
+  /* transition: text 0.5s; */
+}
+.check{
+  text-shadow: none;
+}
+.title{
+  animation: pulse 5s infinite 1s;
 }
 .todo-app {
   display: flex;
@@ -21,9 +46,11 @@ body {
   min-height: 600px;
   background: #161a2b;
   text-align: center;
-  margin: 128px auto;
-  border-radius: 10px;
+  margin: 0 auto;
+  border-radius: 0 0 10px 10px;
   padding-bottom: 32px;
+  border: 2px solid white;
+  animation: apearIn 1s ease-out;
 }
 
 h1 {
@@ -101,7 +128,7 @@ div .complete {
   margin: 4px auto;
   color: #fff;
   background: linear-gradient(
-    90deg,
+    0deg,
     rgba(255, 118, 20, 1) 0%,
     rgba(255, 84, 17, 1) 100%
   );
@@ -114,7 +141,7 @@ div .complete {
 
 .todo-row:nth-child(4n + 1) {
   background: linear-gradient(
-    90deg,
+    0deg,
     rgba(93, 12, 255, 1) 0%,
     rgba(155, 0, 250, 1) 100%
   );
@@ -122,7 +149,7 @@ div .complete {
 
 .todo-row:nth-child(4n + 2) {
   background: linear-gradient(
-    90deg,
+    0deg,
     rgba(255, 12, 241, 1) 0%,
     rgba(250, 0, 135, 1) 100%
   );
@@ -130,16 +157,15 @@ div .complete {
 
 .todo-row:nth-child(4n + 3) {
   background: linear-gradient(
-    90deg,
+    0deg,
     rgba(20, 159, 255, 1) 0%,
     rgba(17, 122, 255, 1) 100%
   );
 }
 .todo-row:hover {
-  background: rgb(151, 151, 151);
-  color: black;
+  background: rgb(95, 95, 95);
+  color: white;
   transition: background 0.5s linear;
-  transition: color 0.5s linear;
 }
 
 .icons {
@@ -166,6 +192,23 @@ div .complete {
   color: yellow;
   transition: color 1s;
 }
+@keyframes changeColor {
+  0% {
+    background-color: rgba(100, 115, 255, 1);
+  }
+  25% {
+    background-color: rgb(152, 0, 212);
+  }
+  50% {
+    background-color: rgb(255, 62, 62);
+  }
+  75% {
+    background-color: rgb(0, 199, 76);
+  }
+  100% {
+    background-color: rgb(100, 115, 255, 1);
+  }
+}
 @keyframes apearIn {
   from {
     transform: translateX(100%);
@@ -173,5 +216,16 @@ div .complete {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes pulse {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
